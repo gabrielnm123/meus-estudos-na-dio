@@ -1,0 +1,14 @@
+docker pull ubuntu
+	baixa a ultima versão disponível no repositorio
+	docker run ubuntu # executa e sai
+	docker ps # mostra que não tem nada em execução
+	docker ps -a # vai mostrar que executou e saiu
+	docker run ubuntu sleep 10 # executa por 10 segundos e depois "dorme" desliga
+	docker run ubuntu sleep 1500 # executa por 1500 segundos
+	entrando em outro terminal
+		docker ps # mostra que o ubuntu está em execução
+		docker stop "nome" ou "id" # para a execução dessa imagem específica
+	docker run --help # mostra o help do run, la vai ter o -t que aloca um pseudo terminal, pra que possa trabalhar nessa imagem do ubuntu, e tem o -i, modo interativo
+	docker run -it ubuntu
+		entra no ubuntu, pode fazer qualquer coisa que se faria no ubuntu, na teoria
+		no exit para a execução da imagem, pode verificar no docker ps

@@ -1,0 +1,3 @@
+docker exec Ubuntu-A mkdir /destino # Ubuntu-A é o nome do conteiner, não precisa entrar no conteiner pra executar qualquer comando
+docker cp meuarquivo.txt Ubuntu-A:/destino # envia o arquivo "meuarquivo.txt", que está na maquina real para o conteiner, zipar arquivos se quiser mandar mais de um
+

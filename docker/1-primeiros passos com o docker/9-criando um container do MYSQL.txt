@@ -1,0 +1,23 @@
+docker pull mysql
+docker run -e MYSQL_ROOT_PASSWORD=Senha123 --name mysql-A -d -p 3306:3306 mysql # -p porta, -e setar as variaveis de ambiente, 3306 é a porta padrão do mysql, demra um pouco pra executar o mysql
+docker exec -it mysql-A bash # abri o bash
+	mysql -u root -p --protocol=tcp
+		ao clicar no enter pede, que foi determinado como Senha123
+			se der erro que não consegui se conectar, é porque o serviço ainda não subiu
+		CREATE DATABASE aula;
+			cria um banco de dados
+		show databases;
+			ver os bancos de dados, vai ter a aula e os padrões do sistema
+		exit
+			sai do mysql
+		exit
+			sai do container
+ip a
+	vc ver que cria um novo dispositivo de rede ao instalar o mysql
+docker inspect mysql-A
+	lista uma serie de informações, uma das informações é o ip que vai está alinhado com o ip do mysql instalado no sua maquina
+apt -y install mysql-client
+mysql -u root -p --protocol=tcp
+	acessa o mesmo banco de dados que foi acessado pelo docker, isso acontece porque foi liberado a porta padrão 3306 e está ouvindo essa porta, ou seja no docker ps ainda vai está em execução o container
+
+

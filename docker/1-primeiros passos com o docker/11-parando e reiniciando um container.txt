@@ -1,0 +1,3 @@
+docker stop mysql-A
+docker start mysql-A # pra voltar a execução
+docker rm mysql-A # excluir o container depois de parar novamente com o stop, os dados foram perdidos apos exclusão

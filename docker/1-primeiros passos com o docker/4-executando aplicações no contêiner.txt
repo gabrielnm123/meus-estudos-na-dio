@@ -1,0 +1,7 @@
+docker run -dti ubuntu # coloca a imagem em backgroud
+docker exec -it "id que pode colocar os tres primeiros, pois não tem outro em execução que se repete certa numeração" ou o "name" /bin/bash # executa o bash, "entra no conteiner" 
+	pra intalar o nano
+		apt update && apt -y upgrade && apt -y install nano
+	exit # agora sai do conteiner, mas não para a execução, já que esta em backgroud
+docker exec -it 388 cat /etc/*release* # executa e sai, sem encerrar a imagem
+docker stop 388 # offiline no conteiner, encerra

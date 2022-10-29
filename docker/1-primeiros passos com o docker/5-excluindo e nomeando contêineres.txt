@@ -1,0 +1,4 @@
+docker rm 388 # exclui o conteiner, que está listado em docker ps -a, passa o id de cada um pra exluir, pra liberar espaso na máquina
+docker rmi hello-world # exclui a imagem hello-world da máquina, pra liberar espaço
+docker run -dti centos # não encontra mas busca, se encontrar baixa e executa o que vc pediu
+docker run -dti --name Ubuntu-A ubuntu # o nome vai ser "Ubuntu-A", pra poder identificar a imagem em execução melhor sem usar o id

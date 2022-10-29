@@ -1,0 +1,6 @@
+docker inspect mysql-A # pra ver as informações do container, dentro do "Mounts" tem o "Destination": "/var/lib/mysql", diretorio padrão dentro do container onde o banco de dados é salvo
+vamos salvar as informações dentro da maquina real, o host
+	mkdir /data # criando uma pasta dentro da maquina real
+	mkdir /data/mysql-A
+	docker run -e MYSQL_ROOT_PASSWORD=Senha123 --name mysql-A -d -p 3306:3306 --volume=/data/mysql-A:/var/lib/mysql mysql # criando um novo container usando --volume e especifiando o novo caminho e o antigo pra salvar os dados
+	ao excluir esse container é só criar outro e setar o caminho pra usar os mesmos dados

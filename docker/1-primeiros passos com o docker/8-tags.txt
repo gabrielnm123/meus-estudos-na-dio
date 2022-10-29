@@ -1,0 +1,4 @@
+no site hub.docker.com pesquisar por um container, la vai ter as tags que especifica a versão
+docker pull debian:9
+baixa a versão 9
+docker run -dti debian:9

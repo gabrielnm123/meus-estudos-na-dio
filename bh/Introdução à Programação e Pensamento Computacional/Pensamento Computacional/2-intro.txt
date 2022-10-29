@@ -1,0 +1,64 @@
+PENSAMENTO COMPUTACIONAL
+
+> Objetivo Geral
+	Apresentar os conceitos que caracterizam o pensamento computacional, permitindo que o dev entenda o que significa pensar computacionalmente
+
+> Percurso
+	1. introdução ao pensamento computacioal
+	2. hablidade complementares
+	3. pilares: decomposição
+	4. pilares: padrões
+	5. pilares: abstração
+	6. pilares: algoritmos
+	7. estudo de caso conceitual: perdido
+	8. estudo de caso aplicado: soma de um intervalo
+	9. estudo de caso aplicado: adivinhe um número
+
+> Overview
+	Pensamento Computacional?
+	
+	Processo de pensamento envolvido na expressãode soluções em passos computacionais ou algoritmos que podem ser implementados no computador
+
+	Sistemático e eficiente
+		Formulação e resolução de problemas
+	Sejam capazes de resolver
+		humanos e máquinas
+	
+	Não é uma diciplina acadêmica e sim uma hablidade generalista
+	matemática, leitura, escrita
+	
+	Baseado em 4 pilares
+		Decomposição: dividir um problema complexo em subproblemas
+			ex: encontrar numero 20 em uma lista em ordem crescente, mas sem razão definida, no geral criar subgrupos, busca binaria
+			3, 5, 6, 9, 20, 27, 45, 55
+			identifica o valor que representa a media do vetor, se for impar identifica o modulo e pega o da esqueda
+			nesse caso o 9, 9 é menor que 20, então exclui do 9 pra esquerda, ficando assim 20, 27, 45, 55
+			faz isso novamente, agora 27, 27 maior que 20, exclui do 27 pra direita ficando só o 20, esse método de separar por grupos é mais eficaz que
+			ir de uma a um
+		Reconhecimento de padrões: identificar padrões ou tendências 
+		ex: 
+			  .
+			 ...
+			.....
+			 ...
+			  .
+		abstração: extrapolar o conceito do problema para uma forma generalista
+			ex: tenho uma circuferencia na vida real e quero saber o tamanho da circunferencia, tenho uma formula generalista que indica esse valor que é
+			C = 2*pi*r
+			Tem a programação orientada a objetos, as classes
+		design de algoritmos: Automatizar. Definir passo a passo a solução do problema
+			input -> operador -> output
+			Processo Contínuo: Refinamento > \
+				            <|         Teste
+					     \	        </
+					       <Análise		      
+				Definir uma solução
+				testar a solução
+				aperfeiçoamento da solução encontrada
+			[Abstração: Resolução do problema > Automatização: Expressão de solução > Análise: Execução da solução e avaliação (refinamento)] > Ciclico
+	Competências
+		Pensamento Sistematico
+		Colaboração dentro da equipe
+		Criatividade e design
+		facilitador
+

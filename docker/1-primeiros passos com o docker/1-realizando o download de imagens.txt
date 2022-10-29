@@ -1,0 +1,9 @@
+hub.docker.com
+	caso seja a primeira vez, fazer cadastro
+	ecessar no modo free
+	procurar por imagem chamado hello world
+	docker pull hello-world # baixa a ultima versão
+	docker images # pra ver as imagens baixadas
+	docker run hello-world # executa a imagem baixada
+	docker ps # verifica as imagens em execuçãos
+	docker ps -a # mostra o que aconteceu recentimente

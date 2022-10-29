@@ -1,0 +1,5 @@
+docker ps # é a antiga
+docker container ls # é a nova
+docker run # é a antiga
+docker container run # é a nova	
+docker container --help # mostra as opções da nova sintaxe
