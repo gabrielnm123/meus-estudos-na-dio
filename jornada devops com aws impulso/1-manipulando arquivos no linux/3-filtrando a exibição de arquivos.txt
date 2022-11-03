@@ -1,0 +1,19 @@
+ls | more 
+	se não tiver a barra de rolagem usar e presionar espaço pra rolar
+ls pa
+	mostra todos que possuem pa no inicio
+ls p* 
+	qualquer caracter
+	a vantagem, nesse caso, mostra conteudo dos diretorios
+ls m?a*
+	inicia com m depois vem qualquer, depois a e depois o resto
+touch 
+	criar arquivos
+ls arquivo[1-3].txt
+	mostra arquivo1 aruivo2 arqfj3
+ls arquivo[2,5]
+	lista so o 2 e o 5
+ls arquivo[^2,5]
+	mostra todos menos 5 e 2
+ls arquivo[^2-5]
+	não mostra do 2 ate o 5

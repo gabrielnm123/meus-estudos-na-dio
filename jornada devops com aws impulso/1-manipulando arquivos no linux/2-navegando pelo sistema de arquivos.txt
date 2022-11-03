@@ -1,0 +1,9 @@
+pwd
+	mostra onde estou
+cd
+	muda de diretório
+ls
+	mostra os diretórios e arquivos no diretorio atual
+cd ..
+	vai para o diretorio anterior que vc estar
+

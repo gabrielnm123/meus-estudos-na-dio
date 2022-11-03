@@ -1,0 +1,3 @@
+rmdir # exclui diretorios vazios
+rm # exclui arquivos
+rm -rf # recursivo, exclui tudo la dentro antes, force, força

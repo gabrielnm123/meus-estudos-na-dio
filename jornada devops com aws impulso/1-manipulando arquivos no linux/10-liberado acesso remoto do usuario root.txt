@@ -1,0 +1,10 @@
+sshd # serviço de acesso remoto
+cat /etc/ssh/sshd_config
+	#permitRootLogin
+	tira o # pra tirar comentario
+	escreve yes depois do permitRootLogin
+	asfasff yes # apaga o resto
+ou reboot ou restarta o serviço
+systemctl status sshd
+	status do serviço do sshd
+ 8:00

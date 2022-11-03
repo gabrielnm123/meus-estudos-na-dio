@@ -1,0 +1,5 @@
+cat /etc/group
+	tem todos os grupos do sistema
+	grupo sudo é do super usuario
+sudo # adm
+

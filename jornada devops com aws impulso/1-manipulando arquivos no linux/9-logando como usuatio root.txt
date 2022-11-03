@@ -1,0 +1,3 @@
+sudo passwd root
+	cria senha para o root
+su ubuntu # loga como ubuntu, sem saber a senha

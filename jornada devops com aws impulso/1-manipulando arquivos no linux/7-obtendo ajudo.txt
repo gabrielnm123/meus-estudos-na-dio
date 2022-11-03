@@ -1,0 +1,6 @@
+ls --help # nem sempre é help
+man ls # manual do ls
+help ls # tambem funciona como ls --help
+help.ubuntu.com
+	tambem ajuda
+

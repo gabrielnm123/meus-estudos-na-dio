@@ -1,0 +1,7 @@
+ls diretorio
+	mostra o que tem dentro do diretorio
+find # procurar
+find -name # busca pelo nome
+find -name arq*
+	procura em todos os diretorios que vc se localiza
+
