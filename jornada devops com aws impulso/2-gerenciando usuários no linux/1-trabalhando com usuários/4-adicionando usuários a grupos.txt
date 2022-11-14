@@ -1,0 +1,7 @@
+cat /etc/group
+	ver os grupos, quando cria um usuario mariana um grupo mariana também é criada
+	marina não esta no grupo sudo, então não é adm
+usermod -G adm,sudo mariana
+	G maiuscolo adiciona em um grupo e g troca 
+	mariana está no grupo sudo e adm
+

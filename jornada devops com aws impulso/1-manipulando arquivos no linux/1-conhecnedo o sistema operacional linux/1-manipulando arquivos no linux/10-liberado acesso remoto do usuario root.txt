@@ -7,4 +7,6 @@ cat /etc/ssh/sshd_config
 ou reboot ou restarta o serviço
 systemctl status sshd
 	status do serviço do sshd
- 8:00
+	tem os logs
+systemctl restart sshd # restarta o serviço
+	não funcionou no aws

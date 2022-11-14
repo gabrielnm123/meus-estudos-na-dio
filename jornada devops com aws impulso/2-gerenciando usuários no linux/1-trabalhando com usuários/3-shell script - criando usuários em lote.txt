@@ -1,0 +1,13 @@
+useradd convidado1 -m - c 'convidado especial' -s /bin/bash -p $(openssl passwd -crypt 123)
+	-p é pra criar o usuario com senha já, mas a senha é encripitada, por isso tem-se que colocar o $(op....crypt senha), deu erro no aws
+nano criar_user.sh
+	#!/bin/bash
+	
+	echo 'Criando usuários do sistema...'
+	useradd quest10 -c 'Usuário convidado' -s /bin/bash -m -p $(openssl passwd -crypt Senha123)
+	passwd quest10 -e
+	echo 'Finalizado!!'
+chmod +x criar_user.sh
+	por padrão não esta como executável
+./criar_user.sh
+	executa

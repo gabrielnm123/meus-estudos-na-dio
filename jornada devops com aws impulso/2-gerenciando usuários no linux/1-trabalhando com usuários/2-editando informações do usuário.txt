@@ -1,0 +1,11 @@
+useradd guest -c 'Convidado' -m -e 01/12/2022
+	user tem acesso ao servidor até tal data determinada pelo parametro -e
+	a data pode ser aucontrario, no aws pe aucontrario
+usermod
+	cria alteraçoes no user
+usermod guest -s /bin/bash
+	pode trocar tudo
+passwd guest -e
+	a senha expira e quando for logar é expecificado a nova senha
+cat /etc/passwd
+	mostra info dos users

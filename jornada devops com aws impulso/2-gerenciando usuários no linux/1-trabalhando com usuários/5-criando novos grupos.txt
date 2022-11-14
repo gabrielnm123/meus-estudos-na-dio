@@ -1,0 +1,15 @@
+groupadd GRP_ADM
+	criou grupo GRP_ADM
+groupdel GRP_ADM
+	exclui o grupo
+useradd rodrigo -c 'Rodrigo Silva' -m -s /bin/bash p $(openssl passwd -crypt Senha123) -G GRP_ADM
+	indica o grupo que o user criado vai se vincular, o grupo tem que existir
+usermod -G GRP_VEM joao
+	agora o joao está no grupo GRP_VEM
+usermod -g GRP_VEM mariana
+	maria sai dos grupos ja estava e so vai pro grupo GRP_VEM
+usermod -G adm,sudo mariana
+	alem de pertencer ao GRP_VEM agora faz parte do grupo adm e sudo
+gpasswd -d mariana sudo
+	mariana sai do sudo
+

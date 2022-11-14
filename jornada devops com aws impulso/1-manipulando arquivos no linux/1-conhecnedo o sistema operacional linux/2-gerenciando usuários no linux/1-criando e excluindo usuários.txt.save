@@ -1,0 +1,4 @@
+useradd joao
+	cria usuario joao, sem senha e sem pasta na home
+userdel -f joao
+	apaga joao

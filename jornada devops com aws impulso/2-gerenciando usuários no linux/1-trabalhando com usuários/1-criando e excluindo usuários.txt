@@ -1,0 +1,16 @@
+useradd joao
+	criando usuario joao, sem senha e pasta na home
+userdel -f joao
+	apaga o joao, -f força a exclusao
+useradd joao -m -c 'João da Silva'
+	-m cria a pasta do user, -c cadastra o nome completo,  
+passwd joao
+	cria senha, não lembra da senha, usar esse comando
+su joao
+	loga como joao, sem o bash, pois não foi determinado o shell padrão
+chsh -s /bin/bash joao
+	determina o bash padrao, era pra ter determiando quando o user foi criado
+userdel -r -f joao
+	-r apaga o diretorio e o email cadastrado
+useradd -m -c 'João da Silva' -s /bin/bash joao
+	-s indica o shell padrão

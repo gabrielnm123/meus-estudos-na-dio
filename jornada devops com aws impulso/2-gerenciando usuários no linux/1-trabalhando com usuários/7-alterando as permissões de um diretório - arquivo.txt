@@ -1,0 +1,6 @@
+chmod 750 /adm
+	leitura 4
+	gravação 2
+	execução 1
+	primeiro o user, group, outros
+85:25

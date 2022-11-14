@@ -1,0 +1,7 @@
+vi arquivo.txt # cria arquivo se não existir
+	não entra no modo edição
+	clicando no i entra no modo edição
+	clica em esc pra sair do modo insert
+	: pra ir no menu
+	pra salvar w, e pra sair q
+	então wq salva e sai

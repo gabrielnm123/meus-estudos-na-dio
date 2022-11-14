@@ -1,0 +1,30 @@
+history
+	lista os ultimos 1000 comandos utilizados no usuario logado
+history 30
+	mostra os ultimos 30 comandos
+
+no history tem indices antes dos comandos, usar o camando ! + o número, ex.: !213
+executa tal comanando
+
+!!
+	ultimo comando
+!?dat?
+	procura camando que começa com dat e executa, nesse caso é date
+history | grep 'planilhas'
+	grep busca planilhas sem executar
+export HISTTIMEFORMAT="%c" 
+	export seta uma variavel de ambiente, atribuindo tal valor o comando history agora exibe mais info
+history -c 
+	apaga todas as entradas
+set +o history
+	set para mudar o parametro do bash
+	agora os comandos não sao armazenados
+set -o history
+	agora armazena
+
+entrando em .bashrc, na pasta do usuário, e mudando o HISTSIZE=1000 para 50 muda o quanto é armazenado no history
+
+history -w
+	cria um arquivo, chamado .bash_history, com os comandos usados
+
+em .bashrc HISTFILESIZE mostra o tamanho em bits do arquivo criado

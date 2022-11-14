@@ -1,0 +1,16 @@
+d diretorio - arquivo
+rwx  rwx   rwx
+dono grupo outros
+
+r - read
+w - write
+x - execute
+
+ls -l
+	depois do tipo vem as permissões, user dono, grupo dono, tamanho, data da ultima modificação e nome do arqui/dict
+
+mkdir /adm /vem
+chown debora:GRP_ADM /adm
+	trocou o user dono e o grupo dono
+chown mariana:GRP_VEM /vem
+
