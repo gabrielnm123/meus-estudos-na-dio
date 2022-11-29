@@ -1,0 +1,31 @@
+infraestrutura como código (IaC)
+	programar pra não ter erros quando replicar os comandos
+controle de versão
+	via github
+principal benefício
+	não precisar repetir o código
+	não presisar ir ao servidor pra replicar um código, só precisa puxar do github
+------------------------------------------------------
+
+DIRETÓRIOS
+	/publico /adm /vem /sec
+GRUPOS
+	GRP_ADM		GRP_VEN		GRP_SEC
+USUÁRIOS
+	carlos		debora		josefina	
+	maria		sebastiana	amanda
+	joao		roberto		rogerio
+------------------------------------------------------
+
+Definições
+	Excluir diretórios, arquivos, grupos e usuários criados anteriormente;
+	Todo provisionamento deve ser feito em um arquivo do tipo Bash Script;
+	O dono de todos os diretórios criados será o usuário root;
+	Todos os usuários terão permissão total dentro do diretório /publico;
+	Os usuários de cada grupo terão permissão total dentro de seu respectivo diretório;
+	Os usuários não poderão ter permissão de leitura, escrita e execução em diretórios de departamento que eles não pertencem;
+	Subir arquivo de script criado para a sua conta no GitHub.
+----------------------------------------------------------
+
+Se conseguir fazer marcar denilsonbonatti no linkedin
+https://www.linkedin.com/in/denilsonbonatti/
