@@ -1,0 +1,6 @@
+touch arquivo.sh
+	automaticamente as permissões ficão 644
+chmod 744 arquivo.sh
+	pra adicionar x somente no user dono
+chmod +x arquivo.sh
+	tando user e group dono e oters também ganham x
