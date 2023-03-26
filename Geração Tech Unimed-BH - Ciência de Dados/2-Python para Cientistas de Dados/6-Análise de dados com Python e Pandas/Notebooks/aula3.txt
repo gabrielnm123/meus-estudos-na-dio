@@ -1,0 +1,1 @@
+tem como usar os arquivos ques estão no google drive, no caso da aula vai ser usado a pasta Datasets que contem um arquivo csv, ao conectar a celula clicar em maount drive
