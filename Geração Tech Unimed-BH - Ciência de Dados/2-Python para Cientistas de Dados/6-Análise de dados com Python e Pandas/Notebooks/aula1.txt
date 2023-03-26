@@ -1,5 +1,0 @@
-logar ao colab do google e clicar em file e notebook para usar as celulas
-clicar em conectar
-ctrl + enter roda a celula
-clica + code para abrir outra celula
-escrever codigo e shift + enter pra executar e abrir outra celula
