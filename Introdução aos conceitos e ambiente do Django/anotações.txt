@@ -6,3 +6,4 @@ python manage.py migrate
   pra criar as tabelas e acesar hostname:8080/admin
 python manage.py createsuperusar --username admin
   cria um user para o admin com nome de admin
+python manage.py runserver
