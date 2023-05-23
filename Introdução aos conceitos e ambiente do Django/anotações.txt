@@ -1,7 +1,7 @@
 django-admin startproject hello_django
 	cria a pasta projeto
 django-admin startapp core
-	cria a pasta core, tem que estar dentro da pas projeto pra o core tambem estar
+	cria a pasta core, tem que estar dentro da pas projeto pra o core tambem estar, cria um app
 python manage.py migrate
   pra criar as tabelas e acesar hostname:8080/admin
 python manage.py createsuperusar --username admin

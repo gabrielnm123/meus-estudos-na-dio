@@ -20,5 +20,5 @@ from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/<name>/<int:idade>', views.hello)
+    path('hello/<name>/<int:idade>', views.hello) # quando usar o path hello redirecionar para o views.hello, chama o metodo, defini os parametros como um rota
 ]
