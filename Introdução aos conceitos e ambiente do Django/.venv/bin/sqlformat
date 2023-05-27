@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/home/gabriel/GitHub/dio/Introdução aos conceitos e ambiente do Django/.venv/bin/python3.11" "$0" "$@"
+'''exec' "/home/gabriel/GitHub/dio/Introdução aos conceitos e ambiente do Django/.venv/bin/python" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re
