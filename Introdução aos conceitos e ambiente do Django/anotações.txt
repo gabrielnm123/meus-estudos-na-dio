@@ -1,9 +1,78 @@
-django-admin startproject hello_django
-	cria a pasta projeto
-django-admin startapp core
-	cria a pasta core, tem que estar dentro da pas projeto pra o core tambem estar, cria um app
-python manage.py migrate
-  pra criar as tabelas e acesar hostname:8080/admin
-python manage.py createsuperusar --username admin
-  cria um user para o admin com nome de admin
-python manage.py runserver
+
+=========================================
+===|>AMBIENTE E HELLO WORLD
+Explicando a estrutura básica do Django
+=========================================
+
+  django-admin startproject hello_django
+  ->cria a pasta projeto
+  django-admin startapp core
+  ->cria a pasta core, tem que estar dentro da pas projeto pra o core tambem estar, cria um app
+  python manage.py runserver
+  -> inicia o servidor
+  python manage.py migrate
+  -> pra criar as tabelas e acesar hostname:8080/admin, la em settins esta definido o databases
+  python manage.py createsuperusar --username admin
+  -> cria um user para o admin com nome de admin
+
+
+===|> Banco de dados e Django admin
+
+  ==> clicando em user e depois no usuario pode ter umas coisas:
+
+  Staff status -> pra poder acesar o /admin, se cetado
+  Designates whether the user can log into this admin site.
+  Superuser status -> pra uar, se cetado
+  Designates that this user has all permissions without explicitly assigning them.
+
+  na pasta com nome do projeto tem o urls.py, onde determino a rota
+  na pasta com nome do projeto tem o settings.py, lá vou determinar na lista INSTALLED_APPS mais um elemento, o nome do app nesse caso o 'core'
+
+
+  vamos criar um rota nova em urls.py, criado o hello/, dentro da lista urlpatterns, usando o metodo path, pra indicar o metodo e os parametros que vou criar em views.py
+  na pasta do app tem o views.py, onde colocamos o codigo, lá devemos criar o metodo hello
+  voutando em urls import views de core
+
+
+===|>Criando tabelas com models
+
+models
+-> criar tabela pra manipular a agenda, class Evento
+  -> a classe Evento foi criada pra representar uma tabela, agora vamos coloca-la pra realizar sua função
+    -> fazer makemigrations pois o outro registra logo no banco de dados, e colocamos, logo em seguida, o nome do app, nesse caso core, caso tenha outros
+      -> python manager.py makemigrations core 
+        -> mas vai da um erro, |> No installed app with label 'core'. <|, porque não instalamos em settings, coloca 'core' na lista INSTALLED_APPS em agenda/settings
+          ❯ python manage.py makemigrations core 
+            Migrations for 'core':
+              core/migrations/0001_initial.py # cria esse arquivo, arquivo de migração
+                - Create model Evento
+-> com o evento colocado em 0001_inital, agora é so fazer o migrate, mas tem outra forma mais controlada
+    ❯ python manage.py sqlmigrate core 0001 # migrar somente o 0001
+  BEGIN;
+  --
+  -- Create model Evento
+  --
+  CREATE TABLE "core_evento" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "titulo" varchar(100) NOT NULL, "descricao" text NULL, "data_evento" datetime NOT NULL, "data_criacao" datetime NOT NULL);
+  COMMIT;
+-> |> CREATE TABLE "core_evento" <| cria o nome de tabela pra mim, 'core_evento', pra criar o proprio nome, basta ir na classe Evento e cria outra classe dentro chamado Meta (meta dados)
+-> como o migrate não foi feito, ainda da pra migrar o modelo, basta apagar o arquivo 0001...
+  -> basta fazer tudo des do python manage.py makemigrations core, pra gerar o 0001 novamente e fazer o comando abaixo
+  ❯ python manage.py sqlmigrate core 0001
+  BEGIN;
+  --
+  -- Create model Evento
+  --
+  CREATE TABLE "evento" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "titulo" varchar(100) NOT NULL, "descricao" text NULL, "data_evento" datetime NOT NULL, "data_criacao" datetime NOT NULL);
+  COMMIT;
+-> agora sim fazemos a migração
+❯ python manage.py migrate core 0001   
+Operations to perform:
+  Target specific migration: 0001_initial, from core
+Running migrations:
+  Applying core.0001_initial... OK
+-> agora vamos registrar no admin 
+----> agora é so brincar abra o site em /admin e abra o novo app em core chamado Evento e adicione um nome eveinto
+        -> quando vc faz o primeiro registro ele aparece listado como Evento objecit(1), temos que prgramar tambem o tratamento do dado, existe algumas funções que podem tratar isso, voltando ao Evento e criando o metodo __str__
+
+-> Classe EventoAdmin em admin.py
+  pra mostrar o titulo e os outros atributos, quais quiser
