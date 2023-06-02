@@ -1,2 +1,2 @@
-./agenda/__pycache__
-./core/__pycache__
+./agenda/__pycache__/*
+./core/__pycache__/*
