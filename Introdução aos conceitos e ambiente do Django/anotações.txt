@@ -76,3 +76,15 @@ Running migrations:
 
 -> Classe EventoAdmin em admin.py
   pra mostrar o titulo e os outros atributos, quais quiser
+
+
+==> Criando uma pagina de listagem
+  -> começa criando um diretorio chamado templates e um arquivo agenda.html na mesma
+  -> depois edita a agenda, com as coisas da pagina
+  -> depois cria uma funçao lista_eventos em views
+  -> adiciona em url o path agenda
+  -> se rodar o sete e entrar subdominio agenda da erro TemplateDoesNotExist at /agenda/, em settings vamos registrar o diretorio de templates na lista TEMPLATES
+  -> listar todos os eventos cadastrados, continua em views com a importação da classe Evento do core.models
+  -> no agenda.html usamos o python
+    -> <b>{{evento.titulo}} - {{evento.data_evento}}</b>
+  -> vamos no models novamente

@@ -45,4 +45,6 @@ class Evento(models.Model): # criando tabela para manipular a agenda
     
     def __str__(self) -> str:
         return self.titulo # assim o Evento object(1) viro o nome do titulo, no caso dentista
-
+    
+    def get_data_evento(self):
+        return self.data_evento.strftime(r'%d/%m/%Y - %H:%M') # mudar padrão das datas
