@@ -11,7 +11,16 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+import sys
 
+# ... The rest of our Django settings
+
+BASE_URL = "http://localhost:8000"
+
+DEV_SERVER = len(sys.argv) > 1 and sys.argv[1] == "runserver"
+
+USE_NGROK = os.environ.get("USE_NGROK", "False") == "True" and os.environ.get("RUN_MAIN", None) != "true"
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +34,7 @@ SECRET_KEY = 'django-insecure-*=p((ke9@ozkv5^s6oxsf93=tuoi^hh7r74kgu!)5%oscch7hx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
