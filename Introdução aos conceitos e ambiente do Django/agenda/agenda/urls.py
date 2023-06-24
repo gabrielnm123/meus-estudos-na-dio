@@ -22,8 +22,9 @@ from django.views.generic import RedirectView # redirecionar a uma url quando ab
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('agenda/', views.lista_eventos), # criando a parte da agenda
+    path('agenda/evento', views.evento), 
     path('', RedirectView.as_view(url='/agenda/')), # pra sempre abrir a agenda
     path('login/', views.login_user), # criando a parte de login
     path('login/submit', views.submit_login), # tem que tirar a barra do final se não da erro quando for fazer o post e get
-    path('logout/', views.logout_user) # 
+    path('logout/', views.logout_user),
 ]

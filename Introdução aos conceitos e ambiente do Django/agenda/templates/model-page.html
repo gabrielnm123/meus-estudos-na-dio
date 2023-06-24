@@ -4,6 +4,10 @@
   {% include 'model-header.html' %} <!-- logicamente o header -->
 </head>
 <body>
+  <div align="right">
+    <a href="/logout">logout</a> <!-- em url fiz um path pra ele chamar uma função em views -->
+  </div>
+  <h1>Agenda</h1>
   {% block content %} {% endblock %} <!-- a agenda.html tem a marcação que esta contida entre o inicio e fim do bloco, isso sera a genda -->
   {% include 'model-footer.html' %}
 </body>

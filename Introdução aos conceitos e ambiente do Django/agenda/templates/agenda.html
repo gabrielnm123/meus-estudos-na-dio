@@ -1,13 +1,12 @@
 {% extends 'model-page.html' %} <!-- exporta o modelo do page -->
 
 {% block content %} <!-- inicio -->
-  <div align="right">
-    <a href="/logout">logout</a> <!-- em url fiz um path pra ele chamar uma função em views -->
-  </div>
-  <h1>Agenda</h1>
-  <h2>Agendamentos</h2>
 
+  <h2>Agendamentos</h2>
+    <a href="evento">
+    <button type="button">Novo Evento</button>
   <ul>
+    </a>
     {% for evento in eventos %} <!-- vai imprimir cada elemento da lista -->
       <li>{{evento.titulo}} - {{evento.get_data_evento}}</li> 
     {% endfor %}

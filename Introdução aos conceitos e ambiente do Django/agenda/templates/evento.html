@@ -1,0 +1,14 @@
+{% extends 'model-page.html' %} <!-- exporta o modelo do page -->
+
+{% block content %} <!-- inicio -->
+  <h2>Evento</h2>
+  <label for="">Título</label>
+  <br>
+  <input type="text" name="titulo">
+  <br>
+  <label for="">Data do Evento</label>
+  <br>
+
+  <!-- type datetime-local transforma o input no tipo data hora local -->
+  <input type="datetime-local" name="data_evento">
+{% endblock %} <!-- fim -->
