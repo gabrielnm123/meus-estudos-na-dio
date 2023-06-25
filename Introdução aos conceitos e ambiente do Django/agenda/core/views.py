@@ -9,14 +9,6 @@ from django.contrib import messages
 # def index(request):
 #     return redirect('/agenda/')
 
-@login_required(login_url='/login/')
-def evento(request):
-    return render(request, 'evento.html')
-
-@login_required(login_url='/login/')
-def submit_evento(request):
-    pass
-
 def submit_login(request):
     if request.POST: # se a requisição for do tipo POST é verdadeiro
         username = request.POST.get('username')
@@ -34,6 +26,25 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
+    return redirect('/')
+
+@login_required(login_url='/login/')
+def evento(request):
+    return render(request, 'evento.html')
+
+@login_required(login_url='/login/')
+def submit_evento(request):
+    if request.POST:
+        titulo = request.POST.get('titulo')
+        data_evento = request.POST.get('data_evento')
+        descricao = request.POST.get('descricao')
+        usuario = request.user
+        Evento.objects.create(
+            titulo=titulo,
+            data_evento=data_evento,
+            descricao=descricao,
+            usuario=usuario
+        )
     return redirect('/')
 
 @login_required(login_url='/login/') # arroba pra indicar que é um decorador, se não autenticado da page not, found, login_url='/login/' server pra quando der não autenticado ele vai direcionar para essa pagina

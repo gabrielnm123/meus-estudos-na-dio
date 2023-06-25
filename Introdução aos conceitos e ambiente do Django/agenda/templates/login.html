@@ -8,7 +8,7 @@
 </head>
 <body>
   <h1>Login</h1>
-  <form action="submit" method="post">{% csrf_token %} <!-- action submit leva pra pagina submit, que é concatenado a login, ou seja ...login/submit, quando preencher o form e clicar no button --> <!-- quando utilizar um form que faz um post colocar o {% csrf_token %} pra gerar um token de segurança, se não da erro, por segurança -->
+  <form action="submit" method="POST">{% csrf_token %} <!-- action submit leva pra pagina submit, que é concatenado a login, ou seja ...login/submit, quando preencher o form e clicar no button --> <!-- quando utilizar um form que faz um post colocar o {% csrf_token %} pra gerar um token de segurança, se não da erro, por segurança -->
     <div align="center">
       <label for="">Usuário:</label>
       <input type="username" name="username"> <!-- o name server pra recuperar os dados depois por ele, isso acontece no views -->
