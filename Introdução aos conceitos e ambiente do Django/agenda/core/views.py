@@ -9,9 +9,13 @@ from django.contrib import messages
 # def index(request):
 #     return redirect('/agenda/')
 
-@login_required()
+@login_required(login_url='/login/')
 def evento(request):
     return render(request, 'evento.html')
+
+@login_required(login_url='/login/')
+def submit_evento(request):
+    pass
 
 def submit_login(request):
     if request.POST: # se a requisição for do tipo POST é verdadeiro
