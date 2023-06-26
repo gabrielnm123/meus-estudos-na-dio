@@ -55,3 +55,13 @@ def lista_eventos(request):
     evento = Evento.objects.filter(usuario=usuario) # quase mesma coisa do all, mas mostra os eventos do usuario logado
     dados = {'eventos': evento} # nome que vai no html
     return render(request, 'agenda.html', dados)
+
+@login_required(login_url='/login/')
+def delete_evento(request, id_evento):
+    # Evento.objects.filter(id=id_evento).delete() --> tem uma falha porque deleta tbm de outros usuarios
+    usuario = request.user 
+    evento = Evento.objects.get(id=id_evento)
+    if usuario == evento.usuario:
+        # so deleta porque compara se usuario que recebe o usuario atual for igual com o usuario do evento
+        evento.delete()   
+    return redirect('/')
