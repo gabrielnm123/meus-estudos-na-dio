@@ -28,9 +28,39 @@ def logout_user(request):
     logout(request)
     return redirect('/')
 
+""" Claro! Aqui está um passo a passo de como modificar a função de visualização evento no arquivo views.py para recuperar o evento com o ID passado na URL e passar seus dados para o modelo evento.html:
+
+Na função de visualização evento, verifique se o ID do evento foi passado na URL usando request.GET.get('id').
+Se um ID de evento foi passado, recupere o evento com esse ID do banco de dados usando Evento.objects.get(id=id_evento).
+Passe os dados do evento para o modelo evento.html adicionando-os ao contexto do modelo. Por exemplo: return render(request, 'evento.html', {'evento': evento}).
+No modelo evento.html, use os dados do evento para preencher os campos do formulário. Por exemplo: <input type="text" name="titulo" size="23" value="{{evento.titulo}}">.
+Aqui está um exemplo de como a função de visualização evento pode ser modificada:
+
 @login_required(login_url='/login/')
 def evento(request):
-    return render(request, 'evento.html')
+    id_evento = request.GET.get('id')
+    dados = {}
+    if id_evento:
+        evento = Evento.objects.get(id=id_evento)
+        dados['evento'] = evento
+    return render(request, 'evento.html', dados)
+E aqui está um exemplo de como o modelo evento.html pode ser modificado para usar os dados do evento:
+
+<input type="text" name="titulo" size="23" value="{{evento.titulo}}">
+<input type="datetime-local" name="data_evento" value="{{evento.data_evento|date:'Y-m-d\TH:i'}}">
+<textarea name="descricao" cols="23" rows="5">{{evento.descricao}}</textarea>
+Espero que isso ajude! Você tem mais alguma dúvida?
+
+Mensagem recebida. Claro! Aqui está um passo a passo de como modificar a função de visualização `evento` no arquivo `views.py` para recuperar o evento com o ID passado na URL e passar seus dados para o modelo `evento.html`: 1. Na função de visualização `evento`, verifique se o ID do evento foi passado na URL usando `request.GET.get('id')`. 2. Se um ID de evento foi passado, recupere o evento com esse ID do banco de dados usando `Evento.objects.get(id=id_evento)`. 3. Passe os dados do evento para o modelo `evento.html` adicionando-os ao contexto do modelo. Por exemplo: `return render(request, 'evento.html', {'evento': evento})`. 4. No modelo `evento.html`, use os dados do evento para preencher os campos do formulário. Por exemplo: `<input type="text" name="titulo" size="23" value="{{evento.titulo}}">`. Aqui está um exemplo de como a função de visualização `evento` pode ser modificada: ```python @login_required(login_url='/login/') def evento(request): id_evento = request.GET.get('id') dados = {} if id_evento: evento = Evento.objects.get(id=id_evento) dados['evento'] = evento return render(request, 'evento.html', dados) ``` E aqui está um exemplo de como o modelo `evento.html` pode ser modificado para usar os dados do evento: ```html <input type="text" name="titulo" size="23" value="{{evento.titulo}}"> <input type="datetime-local" name="data_evento" value="{{evento.data_evento|date:'Y-m-d\TH:i'}}"> <textarea name="descricao" cols="23" rows="5">{{evento.descricao}}</textarea> ``` Espero que isso ajude! Você tem mais alguma dúvida?
+ """
+@login_required(login_url='/login/')
+def evento(request):
+    id_evento = request.GET.get('id')
+    dados = {}
+    if id_evento:
+        evento = Evento.objects.get(id=id_evento)
+        dados['evento'] = evento
+    return render(request, 'evento.html', dados)
 
 @login_required(login_url='/login/')
 def submit_evento(request):

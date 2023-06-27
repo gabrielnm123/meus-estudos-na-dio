@@ -2,19 +2,23 @@
 
 {% block content %} <!-- inicio -->
   <h2>Evento</h2>
+  <!-- <input type="text" name="titulo" size="23" value="{{evento.titulo}}">
+<input type="datetime-local" name="data_evento" value="{{evento.data_evento|date:'Y-m-d\TH:i'}}">
+<textarea name="descricao" cols="23" rows="5">{{evento.descricao}}</textarea>
+Espero que isso ajude! Você tem mais alguma dúvida? -->
   <form action="submit" method="POST">{% csrf_token %}
     <label>Título</label>
     <br>
-    <input type="text" name="titulo" size="23">
+    <input type="text" name="titulo" size="23" value="{{evento.titulo}}">
     <br>
     <label>Data do Evento</label>
     <br>
     <!-- type datetime-local transforma o input no tipo data hora local -->
-    <input type="datetime-local" name="data_evento">
+    <input type="datetime-local" name="data_evento" value="{{evento.data_evento|date:'Y-m-d\TH:i'}}">
     <br>
     <label>Descrição</label>
     <br>
-    <textarea name="descricao" cols="23" rows="5"></textarea>
+    <textarea name="descricao" cols="23" rows="5">{{evento.descricao}}</textarea>
     <br>
     <button type="submit">Salvar</button>
     <a href="/">

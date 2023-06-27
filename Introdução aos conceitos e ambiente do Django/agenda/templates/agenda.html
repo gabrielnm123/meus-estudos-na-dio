@@ -9,7 +9,7 @@
     </a>
     {% for evento in eventos %} <!-- vai imprimir cada elemento da lista -->
       <li>{{evento.titulo}} - {{evento.get_data_evento}} 
-        <a href="evento/?id={{evento.id}}">Editar</a> / <a href="evento/delete/{{evento.id}}">Excluir</a></li> 
+        <a href="{% url 'evento' %}?id={{evento.id}}">Editar</a> / <a href="evento/delete/{{evento.id}}">Excluir</a></li> 
     {% endfor %}
   </ul>
 {% endblock %} <!-- fim -->

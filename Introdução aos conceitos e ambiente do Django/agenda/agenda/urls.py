@@ -23,10 +23,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('agenda/', views.lista_eventos), # criando a parte da agenda
     path('agenda/submit', views.submit_evento),
-    path('agenda/evento', views.evento),
+    path('agenda/evento', views.evento, name='evento'),
     path('agenda/evento/submit', views.submit_evento),
     path('agenda/evento/delete/<int:id_evento>/', views.delete_evento),
-    # path('agenda/evento/?id=<int:id_evento>/'),
+    # path('agenda/evento/?id=<int:id_evento>/', views.evento),
+    # path('agenda/evento/<int:id_evento>/'),
     path('', RedirectView.as_view(url='/agenda/')), # pra sempre abrir a agenda
     path('login/', views.login_user), # criando a parte de login
     path('login/submit', views.submit_login), # tem que tirar a barra do final se não da erro quando for fazer o post e get
