@@ -8,6 +8,7 @@
 Espero que isso ajude! Você tem mais alguma dúvida? -->
   <form action="submit" method="POST">{% csrf_token %}
     <label>Título</label>
+    <input type="number" name="id_evento" value="{{evento.id}}">
     <br>
     <input type="text" name="titulo" size="23" value="{{evento.titulo}}">
     <br>
