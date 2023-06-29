@@ -68,11 +68,19 @@ def submit_evento(request):
         data_evento = request.POST.get('data_evento')
         descricao = request.POST.get('descricao')
         usuario = request.user
-        Evento.objects.create(
-            titulo=titulo,
-            data_evento=data_evento,
-            descricao=descricao,
-            usuario=usuario
+        id_evento = request.POST.get('id_evento') # recupera o id, se tiver
+        if id_evento: # se tiver id é true
+            Evento.objects.filter(id=id_evento).update( # atualiza (update)
+                titulo=titulo,
+                data_evento=data_evento,
+                descricao=descricao
+            )
+        else:
+            Evento.objects.create( # se não, cria (create)
+                titulo=titulo,
+                data_evento=data_evento,
+                descricao=descricao,
+                usuario=usuario
         )
     return redirect('/')
 
