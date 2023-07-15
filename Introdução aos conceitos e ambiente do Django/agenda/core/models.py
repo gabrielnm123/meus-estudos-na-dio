@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User # banco de dados do django
-
+from datetime import datetime, timedelta
 # Create your models here.
 
 class Evento(models.Model): # criando tabela para manipular a agenda
@@ -48,3 +48,9 @@ class Evento(models.Model): # criando tabela para manipular a agenda
     
     def get_data_evento(self):
         return self.data_evento.strftime(r'%d/%m/%Y - %H:%M') # mudar padrão das datas
+
+    def get_evento_atrasado(self):
+        if self.data_evento < datetime.now():
+            return True
+        else:
+            return False

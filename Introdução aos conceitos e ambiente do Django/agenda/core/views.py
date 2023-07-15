@@ -3,6 +3,8 @@ from core.models import Evento
 from django.contrib.auth.decorators import login_required # caso nao esteja logado, da um erro na pagina
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from datetime import datetime
+from django.http.response import Http404, JsonResponse # parou aqui
 
 # Create your views here.
 
@@ -57,8 +59,10 @@ Mensagem recebida. Claro! Aqui está um passo a passo de como modificar a funç�
 def evento(request):
     id_evento = request.GET.get('id')
     dados = {}
-    if id_evento:
+    try:
         dados['evento'] = Evento.objects.get(id=id_evento)
+    except Exception:
+        raise Http404()
     return render(request, 'evento.html', dados)
 
 @login_required(login_url='/login/')
@@ -94,8 +98,11 @@ def submit_evento(request):
 def lista_eventos(request):
     # evento = Evento.objects.get(id=1) # mostar somente um
     usuario = request.user
+    data_atual = datetime.now()
     # eventos = Evento.objects.all() # mostar tudo, cuidado com esse comando pois pode ter muito registro e dar ruim
-    evento = Evento.objects.filter(usuario=usuario) # quase mesma coisa do all, mas mostra os eventos do usuario logado
+    evento = Evento.objects.filter(usuario=usuario,
+                                #    data_evento__gt=data_atual # gt maior que, lt menor que 
+                                   ) # quase mesma coisa do all, mas mostra os eventos do usuario logado
     dados = {'eventos': evento} # nome que vai no html
     return render(request, 'agenda.html', dados)
 
