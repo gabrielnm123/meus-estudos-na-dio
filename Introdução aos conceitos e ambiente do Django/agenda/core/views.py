@@ -70,11 +70,17 @@ def submit_evento(request):
         usuario = request.user
         id_evento = request.POST.get('id_evento') # recupera o id, se tiver
         if id_evento: # se tiver id é true
-            Evento.objects.filter(id=id_evento).update( # atualiza (update)
-                titulo=titulo,
-                data_evento=data_evento,
-                descricao=descricao
-            )
+            evento = Evento.objects.get(id=id_evento)
+            if evento.usuario == usuario:
+                evento.titulo = titulo
+                evento.descricao = descricao
+                evento.data_evento = data_evento
+                evento.save() # faz a mesma coisa que update, mas verifica se quem solicita é o dono do evento
+            # Evento.objects.filter(id=id_evento).update( # atualiza (update)
+            #     titulo=titulo,
+            #     data_evento=data_evento,
+            #     descricao=descricao
+            # )
         else:
             Evento.objects.create( # se não, cria (create)
                 titulo=titulo,
