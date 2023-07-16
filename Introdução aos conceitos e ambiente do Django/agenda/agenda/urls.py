@@ -22,6 +22,7 @@ from django.views.generic import RedirectView # redirecionar a uma url quando ab
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('agenda/', views.lista_eventos), # criando a parte da agenda
+    path('agenda/lista/<int:id_usuario>', views.json_lista_evento),
     path('agenda/submit', views.submit_evento),
     path('agenda/evento', views.evento, name='evento'),
     path('agenda/evento/submit', views.submit_evento),

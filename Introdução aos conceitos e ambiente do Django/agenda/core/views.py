@@ -4,7 +4,8 @@ from django.contrib.auth.decorators import login_required # caso nao esteja loga
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from datetime import datetime
-from django.http.response import Http404, JsonResponse # parou aqui
+from django.http.response import Http404, JsonResponse # http404 pra implicar esse erro, jsanresponse pra trabalhar com javascript
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -59,10 +60,11 @@ Mensagem recebida. Claro! Aqui está um passo a passo de como modificar a funç�
 def evento(request):
     id_evento = request.GET.get('id')
     dados = {}
-    try:
-        dados['evento'] = Evento.objects.get(id=id_evento)
-    except Exception:
-        raise Http404()
+    if id_evento:
+        try:
+            dados['evento'] = Evento.objects.get(id=id_evento)
+        except Exception:
+            raise Http404()
     return render(request, 'evento.html', dados)
 
 @login_required(login_url='/login/')
@@ -115,3 +117,13 @@ def delete_evento(request, id_evento):
         # so deleta porque compara se usuario que recebe o usuario atual for igual com o usuario do evento
         evento.delete()   
     return redirect('/')
+
+@login_required(login_url='/login/')
+def json_lista_evento(request, id_usuario):
+    # evento = Evento.objects.get(id=1) # mostar somente um
+    # usuario = request.user
+    usuario = User.objects.get(id=id_usuario)
+    # eventos = Evento.objects.all() # mostar tudo, cuidado com esse comando pois pode ter muito registro e dar ruim
+    evento = Evento.objects.filter(usuario=usuario).values('id', 'titulo')
+    return JsonResponse(list(evento), safe=False) # o safe é pra quando o primeiro parametro é uma lista e não um dicionario, caso fosse não presisaria
+    # return JsonResponse(list(evento)[0]) # o safe é pra quando o primeiro parametro é uma lista e não um dicionario, caso fosse não presisaria
