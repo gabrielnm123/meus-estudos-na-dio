@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamento - flex shrink</title>
+  <style>
+    .flex-container {
+      display: flex;
+      border: 1px solid black;
+      max-width: 400px;
+      margin-bottom: 10px;
+    }
+
+    .item {
+      background-color: orangered;
+      font-size: 24px;
+      text-align: center;
+      margin: 5px;
+    }
+
+    .s-1 {
+      flex-shrink: 1; /* padrão */
+    }
+
+    .fg-1 {
+      flex-grow: 1;
+    }
+
+    .s-0 {
+      flex-shrink: 0;
+      flex-basis: 200px;
+    }
+  
+    .s-2 {
+      flex-shrink: 0;
+      flex-basis: 100px;
+    }
+
+    .s-3 {
+      flex-shrink: 0;
+      flex-basis: 100px;
+    }
+  </style>
+</head>
+<body>
+  <p>flex-shrink: 1</p>
+  <div class="flex-container">
+    <div class="item s-1 fg-1">A</div>
+    <div class="item s-1 fg-1">B</div>
+    <div class="item s-1 fg-1">C</div>
+    <div class="item s-1 fg-1">D</div>
+    <div class="item s-1 fg-1">E</div>
+  </div>
+
+  <!-- <p>flex-shrink: 1</p> -->
+  <div class="flex-container"> <!-- comprimiu todos respeitando o tamanho minimo do valor dentro do item, se não tivese quebra de linha o as laterais do valor de cada item seria igual de tamanho -->
+    <div class="item s-1 fg-1">A</div>
+    <div class="item s-1 fg-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam alias blanditiis est, ducimus accusamus libero! Eaque soluta, neque quia corrupti harum veritatis dolores sint earum eligendi porro aperiam voluptatum culpa?</div>
+    <div class="item s-1 fg-1">C</div>
+    <div class="item s-1 fg-1">D</div>
+    <div class="item s-1 fg-1">E</div>
+  </div>
+
+  <div class="flex-container"> <!-- comprimiu todos respeitando o tamanho minimo do valor dentro do item, se não tivese quebra de linha o as laterais do valor de cada item seria igual de tamanho -->
+    <div class="item s-1 fg-1">A</div>
+    <div class="item s-1 fg-1">Lorem ipsum</div>
+    <div class="item s-1 fg-1">C</div>
+    <div class="item s-1 fg-1">D</div>
+  </div>
+
+  <p>flex-shrink: 0 / basis: 200px</p>
+  <div class="flex-container"> <!-- items teram o mesmo tamanho, podendo vazar -->
+    <div class="item s-0 fg-1">A</div>
+    <div class="item s-0 fg-1">Lorem asfasf</div>
+    <div class="item s-0 fg-1">C asfd</div>
+    <div class="item s-0 fg-1">D</div>
+  </div>
+
+  <p>flex-shrink: mix / basis: mix</p>
+  <div class="flex-container"> <!-- items teram o mesmo tamanho, podendo vazar -->
+    <div class="item s-1 fg-1">A</div>
+    <div class="item s-2 fg-1">Lorem asfasf</div>
+    <div class="item s-2 fg-1">C</div>
+    <div class="item s-3 fg-1">D</div>
+  </div>
+
+</body>
+</html>
