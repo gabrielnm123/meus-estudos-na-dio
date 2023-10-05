@@ -1,21 +1,98 @@
 * {
   margin: 0;
+  font-family: "Open Sans", sans-serif;
 }
-header { /* inicia o flex, que deixa lado a lado os filhos da esquerda pra direita */
+.flex-container { /* inicia o flex, que deixa lado a lado os filhos da esquerda pra direita como padrão */
   display: flex;
-  background-color: #122a57;
 }
 
-header .item {
+header {
+  height: 100px;
+  background-color: #122a57;
+  justify-content: space-evenly; /* Essa propriedade vai se encarregar de alinhar os itens dentro do 
+  container de acordo com a  direção pretendida e tratar da 
+  distribuição de espaçamento entre eles.  
+  OBS: caso seus itens esteja ocupando 100% de todo o container, 
+  ela não se aplica - space-evenly: As linhas são distribuídas uniformemente no contêiner, com espaço igual ao redor delas. 
+   */
+  align-items: center; /* Trata do alinhamento dos flex itens de acordo com o eixo do 
+  container.  
+  O alinhamento é diferente para quando os itens estão em colunas 
+  ou linhas. 
+  Permite o alinhamento central no eixo vertical. - center: alinhamento dos itens ao centro
+   */
+}
+
+header .flex-item {
   color: white;
 }
 
-.list { /* inicia o flex, que deixa lado a lado os filhos da esquerda pra direita e retira o ponto da lista usando o list-style-type: none*/
-  display: flex;
+header ul { /* inicia o flex, que deixa lado a lado os filhos da esquerda pra direita e retira o ponto da lista usando o list-style-type: none*/
+  width: 250px;
   list-style-type: none;
+  justify-content: space-between;
+  font-size: 15px;
 }
 
 a {
   text-decoration: none; /* retira o sublinhado */
 }
 
+.product-highlight {
+  margin: 300px;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-highlight h1 {
+  font-size: 48px;
+  color: #122a57;
+}
+
+.saiba-mais {
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 50px;
+  background-color: #122a57;
+  color: white;
+  border-radius: 30px; /* essa valor arredonda os lados */
+  margin: 10px;
+}
+
+.quem-somos {
+  justify-content: center;
+  align-items: center;
+}
+
+.quem-somos .flex-item {
+  max-width: 500px; /* pra forçar quebra de linha */
+  /* flex-wrap: wrap; */
+  margin: 10px;
+}
+
+.quem-somos .titulo {
+  border-left: #122a57 5px solid;
+  height: 50px;
+  padding-left: 5px;
+  font-size: 32px;
+  color: #122a57;
+}
+
+.servicos {
+  justify-content: center;
+  align-items: center;
+  background-color: #122a57;
+  color: white;
+  height: 350px;
+}
+
+.servicos .titulo {
+  /* align-content: center; */
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.planos {
+  margin-top: 100px;
+}
