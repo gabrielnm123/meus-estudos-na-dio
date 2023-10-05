@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+}
+header { /* inicia o flex, que deixa lado a lado os filhos da esquerda pra direita */
+  display: flex;
+  background-color: #122a57;
+}
+
+header .item {
+  color: white;
+}
+
+.list { /* inicia o flex, que deixa lado a lado os filhos da esquerda pra direita e retira o ponto da lista usando o list-style-type: none*/
+  display: flex;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none; /* retira o sublinhado */
+}
+

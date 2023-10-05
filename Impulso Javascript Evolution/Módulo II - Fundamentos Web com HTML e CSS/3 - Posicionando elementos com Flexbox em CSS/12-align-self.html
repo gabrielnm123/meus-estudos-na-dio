@@ -48,6 +48,10 @@
     .auto {
       align-self: auto;
     }
+
+    .flex-direction {
+      flex-direction: column;
+    }
   </style>
 </head>
 <body>
@@ -63,6 +67,36 @@
     <div class="item start">123</div>
     <div class="item stretch">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</div>
     <div class="item end">Eveniet tenetur magnam.</div>
+  </section>
+
+  <section class="flex-container">
+    <div class="item center">AAA</div>
+    <div class="item start">123</div>
+    <div class="item stretch">Lorem.</div>
+    <div class="item end">Eveniet.</div>
+    <!-- <div class="item end">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, aperiam, sit velit reiciendis voluptas voluptates a, laboriosam consectetur beatae quod temporibus! Eos iusto dolores eum consectetur veritatis sed blanditiis ipsum.</div>  --> <!-- precisa de conteudo grande pra quebrar a linha e fazer efeito o align-self, tem que ter altura -->
+  </section>
+  
+  <h1>column</h1>
+  <section class="flex-container align-container flex-direction"> <!-- nada acontece por conta do align-container, que o pai manda ficar no centro -->
+    <div class="item auto">AAA</div>
+    <div class="item auto">123</div>
+    <div class="item auto">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</div>
+    <div class="item auto">Eveniet tenetur magnam.</div>
+  </section>
+
+  <section class="flex-container flex-direction">
+    <div class="item center">AAA</div>
+    <div class="item start">123</div>
+    <div class="item stretch">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</div>
+    <div class="item end">Eveniet tenetur magnam.</div>
+  </section>
+
+  <section class="flex-container flex-direction">
+    <div class="item center">AAA</div>
+    <div class="item start">123</div>
+    <div class="item stretch">Lorem.</div>
+    <div class="item end">Eveniet.</div>
   </section>
 </body>
 </html>
