@@ -1,0 +1,11 @@
+docker volume ls # pra listar
+docker volume create nome-do-volume
+pode ser feito daquele jeito docker container run -dti -v nome-do-volume:nome-do-diretorio-container imagem
+ou run container run -dti --mount type=volume,src=nome-do-volume,dst=diretorio-do-container imagem
+
+os volumes ficam em /var/lib/docker/volumes
+
+tipos de mount
+bind
+valume
+dockerfile
