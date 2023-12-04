@@ -1,0 +1,5 @@
+Interpretada -> executa em tempo real diferente de linguagens das Compiladas, Compiladas o codigo é imterpretada pelo compilador e o compilador passa outro codigo para o computador
+Baseada em Protótipos -> como se fosse uma base em comum com grande parte das estruturas de dados do javascript
+Multiparadigma -> pode excolher programar em POO, ou programação funcional ou estruturada
+Comumente utilizada em aplicaçoes web client-side(parte que se comunica com o usuário)
+Segue o padrão ECMAScript -> normas pra codar
