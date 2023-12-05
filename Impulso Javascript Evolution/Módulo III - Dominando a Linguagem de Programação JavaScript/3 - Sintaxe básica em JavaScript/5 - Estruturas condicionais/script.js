@@ -14,3 +14,5 @@ if (jogador1 >= 0 || jogador2 >= 0) {
     console.log('ninguem marcou pontos')
   }
 }
+
+// switch/case
