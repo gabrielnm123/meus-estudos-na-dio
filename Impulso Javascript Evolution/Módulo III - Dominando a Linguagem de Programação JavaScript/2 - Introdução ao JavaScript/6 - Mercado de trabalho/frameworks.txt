@@ -1,0 +1,2 @@
+em alta vueJs e react
+react é mais uma biblioteca e o outro é um framework, ambos pra construir interface pra usuarios
