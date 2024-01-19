@@ -2,5 +2,7 @@ const input = document.getElementById('input') as HTMLInputElement; // assim ind
 // input.value
 
 input.addEventListener('input', (event) => {
-  console.log(event.currentTarget.) // recomeçar a ve video 6
+  console.log('digitei'); // toda vez que digito nesse bloco o codigo se repete
+  const i = event.currentTarget as HTMLInputElement;
+  console.log(i.value); // recomeçar a ve video 6
 });
