@@ -1,14 +1,6 @@
-let valorAny: any; // valor any pode ter qualquer valor
-valorAny = 3;
-valorAny = 'olá';
-valorAny = true;
+let teste = console.log('teste'); // a função console.log não returna nada
+console.log(teste);
 
-let valorString: string = 'teste';
-// valorString = true; // da erro pq o tipo da variavel é string
-valorString = valorAny; // agora não da erro, pq? pq pode se qualquer coisa
-console.log(valorString); // imprime true
-let valorString2: string = 'testão'
-
-function somarString(string1: string, string2: string) {
-  console.log(string1 + string2)
+function somarValoresNumerico(numero1: number, numero2: number): void { // funções que não retornão nada tem um valor padrão  void
+  console.log(numero1 + numero2); 
 }
