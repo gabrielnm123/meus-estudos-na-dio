@@ -1,6 +1,14 @@
-let teste = console.log('teste'); // a função console.log não returna nada
-console.log(teste);
+let anyDeNovo: any;
+anyDeNovo = 3;
+anyDeNovo = 'teste';
+anyDeNovo = false;
 
-function somarValoresNumerico(numero1: number, numero2: number): void { // funções que não retornão nada tem um valor padrão  void
-  console.log(numero1 + numero2); 
-}
+let stringTest: string = 'teste';
+stringTest = anyDeNovo
+
+let unknownValor: unknown;
+unknownValor = 'teste';
+
+let texto: string;
+texto = unknownValor;
+console.log(texto); // parei no video "any esta devolta e sobre unknown minuto 2:50"

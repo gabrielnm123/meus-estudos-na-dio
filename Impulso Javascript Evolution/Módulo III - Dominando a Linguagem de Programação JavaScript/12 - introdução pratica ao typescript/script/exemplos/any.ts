@@ -1,4 +1,4 @@
-let valorAny: any; // valor any pode ter qualquer valor
+/* let valorAny: any; // valor any pode ter qualquer valor
 valorAny = 3;
 valorAny = 'olá';
 valorAny = true;
@@ -16,3 +16,4 @@ function somarString(string1: string, string2: string) {
 }
 
 somarString(valorString, valorString2);
+ */

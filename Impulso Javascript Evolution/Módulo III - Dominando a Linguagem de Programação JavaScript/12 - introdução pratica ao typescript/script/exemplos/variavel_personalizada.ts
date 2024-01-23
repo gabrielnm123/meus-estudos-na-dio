@@ -1,4 +1,4 @@
-function somarValores(input1: number | string, input2: number | string) {
+/* function somarValores(input1: number | string, input2: number | string) {
   if (typeof input1 === 'string' || typeof input2 === 'string') {
     return input1.toString() + input2.toString();
   } else {
@@ -21,3 +21,4 @@ function somarValores2(input1: input, input2: input) {
 console.log(somarValores2(1, 5))
 console.log(somarValores2('ola', 'tudo bem?'))
 console.log(somarValores2('1', 5))
+ */

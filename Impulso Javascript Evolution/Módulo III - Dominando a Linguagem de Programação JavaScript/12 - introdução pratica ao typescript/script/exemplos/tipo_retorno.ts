@@ -1,4 +1,4 @@
-function somarValoresNumericos(numero1: number, numero2: number) {
+/* function somarValoresNumericos(numero1: number, numero2: number) {
   return numero1 + numero2.toString();
 }
 
@@ -9,3 +9,4 @@ function somarValoresNumericos2(numero1: number, numero2: number): number {
 }
 
 console.log(somarValoresNumericos2(5, 2))
+ */

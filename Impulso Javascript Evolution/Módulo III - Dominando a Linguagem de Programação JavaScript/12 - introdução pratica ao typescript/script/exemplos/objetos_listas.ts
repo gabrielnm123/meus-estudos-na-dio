@@ -1,4 +1,4 @@
-const pessoa: {nome: string, idade: number, profissao: 'Auxiliar Administrativo' | 'Desenvolvedor(a)'} = {
+/* const pessoa: {nome: string, idade: number, profissao: 'Auxiliar Administrativo' | 'Desenvolvedor(a)'} = {
   nome: 'Gabriel',
   idade: 28,
   profissao: "Auxiliar Administrativo"
@@ -49,3 +49,4 @@ function listar(lista: string[]) {
 }
 
 listar(carlito.materias)
+ */
