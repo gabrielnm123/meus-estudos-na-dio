@@ -1,12 +1,1 @@
 "use strict";
-let anyDeNovo;
-anyDeNovo = 3;
-anyDeNovo = 'teste';
-anyDeNovo = false;
-let stringTest = 'teste';
-stringTest = anyDeNovo;
-let unknownValor;
-unknownValor = 'teste';
-let texto;
-texto = unknownValor;
-console.log(texto);
