@@ -1,4 +1,4 @@
-
+/* 
 enum Trabalho {
     Atriz,
     Padeiro
@@ -32,4 +32,4 @@ let pessoa4: Humano = {
     nome: "carlos",
     idade: 19,
     profissao: Trabalho.Padeiro
-}
+} */

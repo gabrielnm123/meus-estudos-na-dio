@@ -1,4 +1,4 @@
-// Resposta 1
+/* // Resposta 1
 const funcionario = {
     codigo: 10,
     nome: 'João'
@@ -23,4 +23,4 @@ funcionarioObj.nome = 'João';
 const funcionarioObj2: Funcionario = {
     codigo: 10,
     nome: 'João'
-}
+} */
