@@ -20,5 +20,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'] // pra poder usar o jsx tbm
-  }
+  },
+  watch: true
 };
