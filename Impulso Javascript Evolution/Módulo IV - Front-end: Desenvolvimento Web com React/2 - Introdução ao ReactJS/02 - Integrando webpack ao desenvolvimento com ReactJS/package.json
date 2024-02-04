@@ -7,14 +7,19 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/webpack --mode production",
     "dev": "./node_modules/.bin/webpack --mode development",
-    "start:dev": "./node_modules/lite-server/bin/lite-server"
+    "start:dev": "./node_modules/lite-server/bin/lite-server",
+    "eslint": "./node_modules/.bin/eslint ./src/*.jsx"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^8.56.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-watch": "^8.0.0",
     "webpack": "^5.90.0",
     "webpack-cli": "^5.1.4"

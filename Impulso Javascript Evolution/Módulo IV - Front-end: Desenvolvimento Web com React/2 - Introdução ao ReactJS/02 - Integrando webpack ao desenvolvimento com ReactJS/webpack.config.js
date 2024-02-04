@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   // mode: 'production', // nao precisa pois ja passei no package.json
+  devtool: 'source-map',
   entry: './src/index.jsx', // ponto de entrada
   output: {
     path: path.resolve(__dirname, 'dist'), // path.resolve pega o diretorio raiz do projeto, gerando a pasta dist, como foi determinado por convenção, ou build tbm
