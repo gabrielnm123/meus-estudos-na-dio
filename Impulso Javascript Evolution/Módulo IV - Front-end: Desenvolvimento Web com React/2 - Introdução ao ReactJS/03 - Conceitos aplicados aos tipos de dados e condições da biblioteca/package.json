@@ -8,7 +8,8 @@
     "build": "./node_modules/.bin/webpack --mode production",
     "dev": "./node_modules/.bin/webpack --mode development",
     "start:dev": "./node_modules/lite-server/bin/lite-server",
-    "eslint": "./node_modules/.bin/eslint ./src/*.jsx"
+    "eslint": "./node_modules/.bin/eslint ./src/*.jsx",
+    "eslint:fix": "./node_modules/.bin/eslint --fix ./src/*.jsx"
   },
   "author": "",
   "license": "ISC",
