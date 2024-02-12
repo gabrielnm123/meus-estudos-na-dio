@@ -1,0 +1,10 @@
+FROM ubuntu
+
+# o que vai ser executado dentro do arquivo docker pra construir os requisitos da aplicação
+RUN apt update && apt install -y python3 && apt clean 
+
+# pra copiar o arquivo que esta no projeto pra dentro do container
+COPY teste.py /opt/teste.py
+
+# comando pra subir a aplicação
+CMD python3 /opt/teste.py 

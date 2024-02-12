@@ -1,0 +1,6 @@
+from -> pra indicar a base do container
+run -> o que vai executar
+cop -> o que vai copiar
+cmd -> pra executar comando no bash
+
+docker logs -> pra quando inicia-se o container em -d (detached mode) e não mostra os logs do container
