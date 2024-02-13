@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  mysqlsrv: # nome do servidor
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "Senha123" # usuario é root
+      MYSQL_DATABASE: "testedb" # nome do banco de dados
+    ports:
+      - "3306:3306" # não esquesa de indicar a seta caso precise
+    volumes:
+      - /data/mysql-C:/var/lib/mysql # tornão persistentes, ideal pra backup
+    networks:
+      - minha-rede
+
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    networks:
+      - minha-rede
+
+networks: # criando uma rede
+  minha-rede:
+    driver: bridge
+
+# docker-compose up -> subir
+# docker-compose down -> descer
+# docker-compose up -d -> pra executar em segundo plano

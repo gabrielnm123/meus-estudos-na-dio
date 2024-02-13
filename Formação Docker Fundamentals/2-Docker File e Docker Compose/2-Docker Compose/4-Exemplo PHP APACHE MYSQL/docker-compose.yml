@@ -1,0 +1,60 @@
+# Versão do Docker Compose
+version: "3.7"
+
+# Define os serviços que compõem o aplicativo
+services:
+  # Serviço web que executa o servidor Apache com PHP
+  web:
+    # Imagem Docker a ser usada para este serviço
+    image: webdevops/php-apache:alpine-php7
+    # Mapeia a porta 4500 do host para a porta 80 do container
+    ports:
+      - "4500:80"
+    # Monta o volume para persistência de dados
+    volumes:
+      - /data/php/:/app
+    # Define a rede à qual este serviço está conectado
+    networks:
+      - minha-rede
+
+  # Serviço de banco de dados que executa o MySQL
+  db:
+    # Imagem Docker a ser usada para este serviço
+    image: mysql:5.7
+    # Define as variáveis de ambiente para a configuração do MySQL
+    environment:
+      MYSQL_ROOT_PASSWORD: "Senha123"
+      MYSQL_DATABASE: "testedb"
+    # Mapeia a porta 3306 do host para a porta 3306 do container
+    ports:
+      - "3306:3306"
+    # Monta o volume para persistência de dados
+    volumes:
+      - /data/mysql-C:/var/lib/mysql
+    # Define a rede à qual este serviço está conectado
+    networks:
+      - minha-rede
+
+  # Serviço phpMyAdmin para gerenciamento do banco de dados
+  phpmyadmin:
+    # Imagem Docker a ser usada para este serviço
+    image: phpmyadmin/phpmyadmin
+    # Define as variáveis de ambiente para a configuração do phpMyAdmin
+    environment:
+      MYSQL_ROOT_PASSWORD: "Senha123"
+    # Mapeia a porta 8080 do host para a porta 80 do container
+    ports:
+      - "8080:80"
+    # Monta o volume para persistência de dados
+    volumes:
+      - /data/php/admin/uploads.ini:/usr/local/etc/php/conf.d/php-phpmyadmin.ini
+    # Define a rede à qual este serviço está conectado
+    networks:
+      - minha-rede
+
+# Define as redes usadas pelos serviços
+networks:
+   # Rede personalizada
+   minha-rede:
+     # Usa o driver de rede padrão (bridge)
+     driver: bridge
