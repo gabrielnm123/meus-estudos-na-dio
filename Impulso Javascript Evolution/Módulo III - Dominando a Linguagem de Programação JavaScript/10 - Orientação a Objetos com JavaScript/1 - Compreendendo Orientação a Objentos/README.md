@@ -8,7 +8,6 @@
 
 4. **Abstração**: Este conceito nos orienta a construir códigos que sejam relacionados com objetos da nossa vida real. A abstração é um dos conceitos fundamentais da POO e consiste em representar objetos complexos de forma simplificada, extraindo somente as informações essenciais para o contexto em que estão sendo utilizados⁷⁹.
 
-Espero que isso ajude a esclarecer esses conceitos para você! Se tiver mais perguntas, fique à vontade para perguntar.
 
 Origem: conversa com o Bing, 17/02/2024
 (1) Herança: Programação Orientada a Objetos - DevMedia. https://www.devmedia.com.br/conceitos-e-exemplos-heranca-programacao-orientada-a-objetos-parte-1/18579.
