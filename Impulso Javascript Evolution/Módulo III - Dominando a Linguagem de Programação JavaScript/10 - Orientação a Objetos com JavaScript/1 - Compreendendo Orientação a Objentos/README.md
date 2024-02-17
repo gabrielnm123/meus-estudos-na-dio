@@ -1,4 +1,4 @@
-Claro, aqui estão as definições desses conceitos fundamentais da Programação Orientada a Objetos (POO):
+# Conceitos fundamentais da Programação Orientada a Objetos (POO):
 
 1. **Herança**: É um princípio que permite que classes compartilhem atributos e métodos, através de "heranças". Uma classe pode herdar características de outra classe, permitindo o reaproveitamento de código e a organização hierárquica das classes¹². Existem dois tipos principais de classes na herança: a Classe Base, que concede as características a outra classe, e a Classe Derivada, que herda as características da classe base¹.
 
